@@ -1,4 +1,20 @@
-@use "../abstracts" as *;
+@use '../abstracts' as a;
+
+:root {
+  --c-white: #FFFDFA;
+  --c-blue: #00001a;
+  --c-gray: #5e607a;
+  --c-red: #f15d51;
+  --c-silver: #c5c6ce;
+  --c-yellow: #e9aa52;
+
+  --f-xl: clamp(a.rem(40), 2.147887323943662rem + 1.5023474178403755vw, a.rem(56));
+  --f-l: clamp(a.rem(32), 1.823943661971831rem + 0.7511737089201878vw, a.rem(40));
+  --f-m: a.rem(32);
+  --f-s: a.rem(20);
+  --f-body: a.rem(15);
+
+}
 
 html {
   font-size: 100%;
@@ -15,12 +31,15 @@ html {
 }
 
 body {
-  font-size: rem(16);
-  font-weight: 300;
-  line-height: 1.6;
-  min-height: 100dvh;
-  font-family: "Poppins", sans-serif;
-  overflow-x: hidden;
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+  line-height: 1.7;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.1;
 }
 
 img,
@@ -35,23 +54,10 @@ a:hover {
   text-decoration: none;
 }
 
+li {
+  list-style-type: none;
+}
+
 h1 {
   font-size: clamp(2rem, 0.5rem + 5vw, 5rem);
-  // font-size: $fs-head-h1;
-  // font-family: $ff-season;
-}
-
-h2 {
-  // font-size: $fs-head-h2;
-  // font-family: $ff-season;
-}
-
-h3 {
-  // font-size: $fs-head-h3;
-  // font-family: $ff-season;
-}
-
-h4 {
-  font-size: 0.9rem;
-  // font-family: $ff-poppins;
 }
