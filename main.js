@@ -1,12 +1,15 @@
 import "/src/scss/style.scss";
 
+// variables
 const btnOpen = document.querySelector("#btnOpen");
 const btnClose = document.querySelector("#btnClose");
-const media = window.matchMedia("(width < 69.375em)");
 const navContent = document.querySelector(".nav__content");
 const navOverlay = document.querySelector(".nav__overlay");
 const body = document.querySelector("body");
 
+const media = window.matchMedia("(width < 69.375em)");
+
+// functions
 function openMobileMenu() {
   btnOpen.setAttribute("aria-expanded", "true");
   body.classList.add("noscroll");
@@ -15,6 +18,7 @@ function closeMobileMenu() {
   btnOpen.setAttribute("aria-expanded", "false");
   body.classList.remove("noscroll");
 }
+
 btnOpen.addEventListener("click", openMobileMenu);
 btnClose.addEventListener("click", closeMobileMenu);
 
@@ -34,11 +38,11 @@ function setupNav(e) {
   }
 }
 
-setupNav(media);
-
 media.addEventListener("change", function (e) {
   setupNav(e);
 });
+
+setupNav(media);
 
 // Accessibility features
 // - We don't want to select items with tab that are not shown on the screen, with this code when we press tab we can select the closebtn and the menu links that are not even visible on the screen
