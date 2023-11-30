@@ -1,0 +1,61 @@
+@use '../abstracts' as a;
+
+.nav {
+
+  // 01 Button Open
+  &__open[aria-expanded="true"] {
+    ~.nav__content {
+      display: block;
+      translate: 0;
+    }
+
+    ~.nav__overlay {
+      opacity: 0.7;
+    }
+  }
+
+  // 02 Overlay
+  &__overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: black;
+    opacity: 0;
+    transition: opacity 300ms ease-in-out;
+    pointer-events: none;
+  }
+
+  // 03 Content
+  &__content {
+    padding: a.rem(30);
+
+    // Mobile Styles
+    @media (width < a.em(1110)) {
+      display: none;
+      position: fixed;
+      inset: 0 0 0 a.rem(120);
+      background-color: a.$c-white;
+      translate: 100vw 0;
+      transition: translate 300ms ease-in-out;
+      // transform: translateX(25em);
+    }
+  }
+
+  // 04 Button Close
+  &__close {
+    display: block;
+    margin-inline-start: auto;
+    margin-block-end: a.rem(86);
+  }
+
+  // General Button
+  button {
+    border: none;
+    background: none;
+    cursor: pointer;
+
+    @media (width >=a.rem(1110)) {
+      display: none;
+    }
+  }
+}

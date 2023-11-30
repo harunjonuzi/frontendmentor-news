@@ -1,0 +1,13 @@
+@use './functions' as f;
+
+$f-xl: clamp(f.rem(40), 2.147887323943662rem + 1.5023474178403755vw, f.rem(56));
+$f-l: clamp(f.rem(32), 1.823943661971831rem + 0.7511737089201878vw, f.rem(40));
+$f-m: f.rem(32);
+$f-s: f.rem(20);
+$f-xs: f.rem(18);
+$f-body: f.rem(15);
+$f-btn: f.rem(14);
+
+$fw-normal: 300;
+$fw-bold: 700;
+$fw-xbold: 800;

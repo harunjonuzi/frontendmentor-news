@@ -4,7 +4,7 @@
 .hide-for-mobile {
 
   // hide for tablet and mobile
-  @include breakpoint-down(medium) {
+  @media (width <=rem(1110)) {
     display: none;
   }
 }
@@ -12,7 +12,7 @@
 .hide-for-desktop {
 
   // hide for desktop
-  @include breakpoint-up(large) {
+  @media (width >=rem(1110)) {
     display: none;
   }
 }
