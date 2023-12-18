@@ -1,4 +1,6 @@
-# FrontEndChallenge | News Homepage
+# Frontend Mentor Challenge | News Homepage
+
+https://www.frontendmentor.io/challenges
 
 ## Tech Stack
 
