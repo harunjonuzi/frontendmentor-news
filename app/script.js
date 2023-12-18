@@ -1,4 +1,4 @@
-import "/src/scss/style.scss";
+import "../src/scss/styles.scss";
 
 // variables
 const btnOpen = document.querySelector("#btnOpen");
@@ -11,35 +11,35 @@ const media = window.matchMedia("(width < 69.375em)");
 
 // functions
 function openMobileMenu() {
-  btnOpen.setAttribute("aria-expanded", "true");
-  body.classList.add("noscroll");
+    btnOpen.setAttribute("aria-expanded", "true");
+    body.classList.add("noscroll");
 }
 function closeMobileMenu() {
-  btnOpen.setAttribute("aria-expanded", "false");
-  body.classList.remove("noscroll");
+    btnOpen.setAttribute("aria-expanded", "false");
+    body.classList.remove("noscroll");
 }
 
 btnOpen.addEventListener("click", openMobileMenu);
 btnClose.addEventListener("click", closeMobileMenu);
 
 function setupNav(e) {
-  if (e.matches) {
-    // mobile
-    console.log("is mobile");
-    setTimeout(() => {
-      navContent.style.display = "block";
-      navOverlay.style.display = "block";
-    }, 500);
-  } else {
-    // desktop
-    console.log("is desktop");
-    navContent.style.display = "";
-    navOverlay.style.display = "none";
-  }
+    if (e.matches) {
+        // mobile
+        console.log("is mobile");
+        setTimeout(() => {
+            navContent.style.display = "block";
+            navOverlay.style.display = "block";
+        }, 500);
+    } else {
+        // desktop
+        console.log("is desktop");
+        navContent.style.display = "";
+        navOverlay.style.display = "none";
+    }
 }
 
 media.addEventListener("change", function (e) {
-  setupNav(e);
+    setupNav(e);
 });
 
 setupNav(media);
@@ -47,7 +47,7 @@ setupNav(media);
 // Accessibility features
 // - We don't want to select items with tab that are not shown on the screen, with this code when we press tab we can select the closebtn and the menu links that are not even visible on the screen
 document.addEventListener("keyup", (e) => {
-  if (e.key == "Tab") {
-    console.log(document.activeElement);
-  }
+    if (e.key == "Tab") {
+        console.log(document.activeElement);
+    }
 });
